@@ -1,0 +1,14 @@
+services:
+  devcontainer:
+    build: .
+    # image: mcr.microsoft.com/devcontainers/python:1-3.12-bullseye
+    volumes:
+      - ../:/workspace:cached
+    command: flask run --host=0.0.0.0 --port=5000 --debug
+
+    # Optional: forward ports if your Flask app uses them
+    ports:
+      - "5000:5000"
+    # Uncomment and adjust if you need environment variables
+    # environment:
+    #   - ENV_VAR_NAME=env_var_value
